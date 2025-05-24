@@ -1,4 +1,3 @@
-import {Image} from 'expo-image';
 import {StyleSheet} from 'react-native';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import {ThemedText} from '@/components/ThemedText';
@@ -8,14 +7,16 @@ export default function HomeScreen() {
     return (
         <ParallaxScrollView
             headerBackgroundColor={{light: 'rgba(13,40,71,0.5)', dark: '#0D2847'}}
-            headerImage={
-                <Image
-                    source={require('@/assets/images/currency-converter.png')}
-                    style={styles.reactLogo}
-                />
-            }>
+            headerTitle={<ThemedText type="subtitle" darkColor='#ffffff' lightColor='#004074'>Live Currency</ThemedText>}
+            >
             <ThemedView style={styles.titleContainer}>
-                <ThemedText type="title">Currency Converter</ThemedText>
+                <ThemedText
+                    type="title"
+                    darkColor='#ffffff'
+                    lightColor='#004074'
+                >
+                    Currency Converter
+                </ThemedText>
             </ThemedView>
 
             <ThemedView style={styles.stepContainer}>
@@ -53,9 +54,5 @@ const styles = StyleSheet.create({
         gap: 8,
         marginBottom: 8,
     },
-    reactLogo: {
-        height: 60,
-        width: 60,
-        position: 'relative',
-    },
+
 });
